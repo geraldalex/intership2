@@ -1,23 +1,24 @@
 import React from "react";
+
 import Svg, { Path } from "react-native-svg";
 import { colors, perfectSize } from "../../../../theme";
 
-const OkIcon = () => {
+const ErrorIcon = () => {
   return (
     <Svg
       style={{ paddingRight: "15%" }}
-      width={perfectSize(19)}
-      height={perfectSize(16)}
-      viewBox="0 0 19 16"
+      width={perfectSize(14)}
+      height={perfectSize(14)}
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <Path
-        d="M6.03809 12.6234L1.53383 7.64802L0 9.33035L6.03809 16L19 1.68233L17.477 0L6.03809 12.6234Z"
-        fill={colors.greenColor}
+        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+        fill="#FF2424"
       />
     </Svg>
   );
 };
 
-export default OkIcon;
+export default ErrorIcon;

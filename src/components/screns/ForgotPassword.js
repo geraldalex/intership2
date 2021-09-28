@@ -2,18 +2,30 @@ import React from "react";
 import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../theme";
 import ArrowIcon from "./myComponents/ArrowIcon";
+import ErrorIcon from "./myComponents/ErrorIcon";
 import FormButton from "./myComponents/FormButton";
 import OkIcon from "./myComponents/OkIcon";
 
-const SignUpStep1 = () => {
+const ForgotPassword = () => {
   return (
     <View style={styles.container}>
       <StatusBar translucent barStyle="light-content" />
-      <Text style={styles.headerTitle}>Sign up step 1</Text>
+      <Text style={styles.headerTitle}>Forgot password</Text>
+      <Text
+        style={{
+          color: colors.whiteColor,
+          fontSize: perfectSize(14),
+          marginRight: "5%",
+          marginLeft: "5%",
+        }}
+      >
+        Please, enter your email address. You will receive a link to create a
+        new password via email.
+      </Text>
       <View
         style={[
           styles.inputContainer,
-          { marginTop: "15%" },
+          { marginTop: "5%" },
           { flexDirection: "row" },
           { justifyContent: "space-between" },
           { alignItems: "center" },
@@ -21,65 +33,30 @@ const SignUpStep1 = () => {
       >
         <TextInput
           style={styles.textInput}
-          placeholder="Name"
-          placeholderTextColor={colors.grayColor}
-        />
-        <OkIcon />
-      </View>
-
-      <View style={[styles.inputContainer, { marginTop: "2%" }]}>
-        <TextInput
-          style={styles.textInput}
           placeholder="Email"
           placeholderTextColor={colors.grayColor}
           keyboardType="email-address"
         />
+        <ErrorIcon />
       </View>
 
-      <View style={[styles.inputContainer, { marginTop: "2%" }]}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Phone Number"
-          placeholderTextColor={colors.grayColor}
-          keyboardType="phone-pad"
-        />
-      </View>
-
-      <View style={[styles.inputContainer, { marginTop: "2%" }]}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Password"
-          placeholderTextColor={colors.grayColor}
-          secureTextEntry={true}
-        />
-      </View>
-      <View
+      <Text
         style={{
-          flexDirection: "row",
-          alignSelf: "flex-end",
-          marginRight: "5%",
-          marginTop: "5%",
-          alignItems: "center",
+          color: "#ff0000",
+          fontSize: perfectSize(14),
+          alignSelf: "center",
+          marginBottom: "8%",
         }}
       >
-        <Text
-          style={{
-            color: colors.whiteColor,
-            fontSize: perfectSize(14),
-            marginRight: "2%",
-          }}
-        >
-          Already have an account?
-        </Text>
-        <ArrowIcon />
-      </View>
-      <FormButton buttonTitle="SIGN UP" />
-      <FormButton buttonTitle="LOGIN" />
+        Not a valid email address. Should be your@email.com
+      </Text>
+
+      <FormButton buttonTitle="SEND" />
     </View>
   );
 };
 
-export default SignUpStep1;
+export default ForgotPassword;
 
 const styles = StyleSheet.create({
   container: {
@@ -93,6 +70,7 @@ const styles = StyleSheet.create({
     marginLeft: "5%",
     marginTop: perfectSize(106),
     fontWeight: "700",
+    marginBottom: "15%",
   },
 
   inputContainer: {
@@ -101,6 +79,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.dark,
     alignSelf: "center",
     justifyContent: "center",
+    borderColor: "#ff0000",
+    borderWidth: perfectSize(1),
   },
   textInput: {
     paddingLeft: perfectSize(20),

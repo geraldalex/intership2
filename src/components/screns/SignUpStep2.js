@@ -1,18 +1,36 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar,TextInput,TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { colors, perfectSize } from "../../../theme";
 import ArrowIcon from "./myComponents/ArrowIcon";
 import FormButton from "./myComponents/FormButton";
 import OkIcon from "./myComponents/OkIcon";
-
 
 const SignUpStep2 = () => {
   return (
     <View style={styles.container}>
       <StatusBar translucent barStyle="light-content" />
       <Text style={styles.headerTitle}>Sign up step 2</Text>
-      <Text style={[styles.headerTitle, {marginTop: '5%'}, {marginLeft: "8%"}]}>Write phone or email confirm code</Text>
-      <View style={[styles.inputContainer, {marginTop: "5%"}, {flexDirection:'row'}, {justifyContent:'space-between'}, {alignItems:'center'}]}>
+      <Text
+        style={[styles.headerTitle, { marginTop: "5%" }, { marginLeft: "8%" }]}
+      >
+        Write phone or email confirm code
+      </Text>
+      <View
+        style={[
+          styles.inputContainer,
+          { marginTop: "5%" },
+          { flexDirection: "row" },
+          { justifyContent: "space-between" },
+          { alignItems: "center" },
+        ]}
+      >
         <TextInput
           style={styles.textInput}
           placeholder="Email"
@@ -20,34 +38,45 @@ const SignUpStep2 = () => {
           keyboardType="email-address"
         />
         <TouchableOpacity style={styles.miniButtonContainer}>
-            <Text style={styles.buttonTitle}>Send</Text>
+          <Text style={styles.buttonTitle}>Send</Text>
         </TouchableOpacity>
       </View>
 
-      <View style={[styles.inputContainer, {marginTop: "2%"}, {flexDirection:'row'}, {justifyContent:'space-between'}, {alignItems:'center'}]}>
+      <View
+        style={[
+          styles.inputContainer,
+          { marginTop: "2%" },
+          { flexDirection: "row" },
+          { justifyContent: "space-between" },
+          { alignItems: "center" },
+        ]}
+      >
         <TextInput
           style={styles.textInput}
           placeholder="Phone Number"
           placeholderTextColor={colors.grayColor}
-          keyboardType='phone-pad'
+          keyboardType="phone-pad"
         />
         <TouchableOpacity style={styles.miniButtonContainer}>
-            <Text style={styles.buttonTitle}>Send</Text>
+          <Text style={styles.buttonTitle}>Send</Text>
         </TouchableOpacity>
       </View>
 
-      <View style={[styles.inputContainer, {marginTop: "10%"}, {marginBottom:'5%'}]}>
+      <View
+        style={[
+          styles.inputContainer,
+          { marginTop: "10%" },
+          { marginBottom: "5%" },
+        ]}
+      >
         <TextInput
           style={styles.textInput}
           placeholder="Name"
           placeholderTextColor={colors.grayColor}
         />
-
-        
       </View>
-      
-      <FormButton buttonTitle='Next'  />
-      
+
+      <FormButton buttonTitle="Next" />
     </View>
   );
 };
@@ -74,7 +103,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.dark,
     alignSelf: "center",
     justifyContent: "center",
-    
   },
   textInput: {
     paddingLeft: perfectSize(20),
@@ -82,21 +110,18 @@ const styles = StyleSheet.create({
     fontSize: perfectSize(14),
   },
   miniButtonContainer: {
-
-    width:'20%',
-    height:'80%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf:'center',
+    width: "19%",
+    height: "80%",
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
     backgroundColor: colors.redColor,
     borderRadius: perfectSize(30),
     padding: perfectSize(10),
-    
-        },
-        buttonTitle:{
-            fontWeight: 'bold',
-            fontSize: perfectSize(20),
-            color: colors.whiteColor
-    
-        }
+    marginRight: "5%",
+  },
+  buttonTitle: {
+    fontSize: perfectSize(20),
+    color: colors.whiteColor,
+  },
 });

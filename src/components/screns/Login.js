@@ -1,17 +1,24 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar,TextInput } from "react-native";
+import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../theme";
 import ArrowIcon from "./myComponents/ArrowIcon";
 import FormButton from "./myComponents/FormButton";
 import OkIcon from "./myComponents/OkIcon";
-
 
 const Login = () => {
   return (
     <View style={styles.container}>
       <StatusBar translucent barStyle="light-content" />
       <Text style={styles.headerTitle}>Login</Text>
-      <View style={[styles.inputContainer, {marginTop: "15%"}, {flexDirection:'row'}, {justifyContent:'space-between'}, {alignItems:'center'}]}>
+      <View
+        style={[
+          styles.inputContainer,
+          { marginTop: "15%" },
+          { flexDirection: "row" },
+          { justifyContent: "space-between" },
+          { alignItems: "center" },
+        ]}
+      >
         <TextInput
           style={styles.textInput}
           placeholder="Email"
@@ -21,7 +28,7 @@ const Login = () => {
         <OkIcon />
       </View>
 
-      <View style={[styles.inputContainer, {marginTop: "2%"}]}>
+      <View style={[styles.inputContainer, { marginTop: "2%" }]}>
         <TextInput
           style={styles.textInput}
           placeholder="Password"
@@ -29,16 +36,28 @@ const Login = () => {
           secureTextEntry={true}
         />
       </View>
-      <View style={{flexDirection: 'row', alignSelf:'flex-end', marginRight:'5%', marginTop:'5%', alignItems:'center'}}>
-      <Text style={{color: colors.whiteColor, fontSize: perfectSize(14), marginRight:'2%'}}>
-      Forgot your password?
-      </Text>
-      <ArrowIcon />
-     
-
-      </View >
-      <FormButton buttonTitle='LOGIN'  />
-      <FormButton buttonTitle='SIGN UP'  />
+      <View
+        style={{
+          flexDirection: "row",
+          alignSelf: "flex-end",
+          marginRight: "5%",
+          marginTop: "5%",
+          alignItems: "center",
+        }}
+      >
+        <Text
+          style={{
+            color: colors.whiteColor,
+            fontSize: perfectSize(14),
+            marginRight: "2%",
+          }}
+        >
+          Forgot your password?
+        </Text>
+        <ArrowIcon />
+      </View>
+      <FormButton buttonTitle="LOGIN" />
+      <FormButton buttonTitle="SIGN UP" />
     </View>
   );
 };
@@ -65,7 +84,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.dark,
     alignSelf: "center",
     justifyContent: "center",
-    
   },
   textInput: {
     paddingLeft: perfectSize(20),
