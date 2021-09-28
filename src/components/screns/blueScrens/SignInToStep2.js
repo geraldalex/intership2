@@ -184,6 +184,7 @@ const styles = StyleSheet.create({
     fontSize: perfectSize(12),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
+    width:'50%'
   },
   miniButtonContainer: {
     width: "25%",

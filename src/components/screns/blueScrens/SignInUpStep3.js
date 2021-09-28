@@ -187,5 +187,6 @@ const styles = StyleSheet.create({
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
     width: "50%",
+    width:'60%'
   },
 });
