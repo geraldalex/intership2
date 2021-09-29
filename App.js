@@ -20,6 +20,7 @@ import SignInToGreen from './src/components/screns/greencreens/SignInToGreen';
 import SignInUpStepGreen3 from './src/components/screns/greencreens/SignInUpStepGreen3';
 import SignInToStepGreen2 from './src/components/screns/greencreens/SignInToStepGreen2';
 import SignInToStepGreen1 from './src/components/screns/greencreens/SignInToStepGreen1';
+import Settings from './src/components/screns/settings/Settings';
 
 
 export default function App() {
@@ -51,6 +52,7 @@ export default function App() {
       <Drawer.Screen name="SignInUpStepGreen3" component={SignInUpStepGreen3} />
       <Drawer.Screen name="SignInToStepGreen2" component={SignInToStepGreen2} />
       <Drawer.Screen name="SignInToStepGreen1" component={SignInToStepGreen1} />
+      <Drawer.Screen name="Settings" component={Settings} />
      
     </Drawer.Navigator>
   </NavigationContainer>
