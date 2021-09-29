@@ -1,7 +1,7 @@
 import React from "react";
 
 import Svg, { Path } from "react-native-svg";
-import { colors, perfectSize } from "../../../../theme";
+import { perfectSize } from "../../../../theme";
 
 const ErrorIcon = () => {
   return (

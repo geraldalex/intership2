@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 
-const FormButtonBlue = ({ buttonTitle, onPress }) => {
+const FormButtonGreen = ({ buttonTitle, onPress }) => {
   return (
     <TouchableOpacity style={styles.container}>
       <Text style={styles.buttonTitle}>{buttonTitle}</Text>
@@ -10,7 +10,7 @@ const FormButtonBlue = ({ buttonTitle, onPress }) => {
   );
 };
 
-export default FormButtonBlue;
+export default FormButtonGreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
-    backgroundColor: colors.blueColor,
+    backgroundColor: colors.darkGreen,
 
     padding: perfectSize(10),
     marginTop: "6%",
 
-    shadowColor: colors.blueColor,
+    shadowColor: colors.darkGreen,
     shadowOffset: {
       width: 0,
       height: 4,

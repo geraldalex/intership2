@@ -10,6 +10,7 @@ export default colors = {
     pureColor: '#FAE7E7',
     pureBorderColor: '#FF6C6C',
     blackColor: '#000000',
-    lightBlueColor:'#F0EFFF'
+    lightBlueColor:'#F0EFFF',
+    darkGreen: '#035A31'
     
 }

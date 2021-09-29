@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
-import FormButtonBlue from "../myComponents/FormButtonBlue";
-import EyeIcon from "../myComponents/EyeIcon";
+import FormButtonGreen from "../myComponents/FormButtonGreen";
 
-const SignInTo = () => {
+
+const SignInUpStepGreen3 = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
@@ -45,7 +45,7 @@ const SignInTo = () => {
           },
         ]}
       >
-        Sign in to
+        Sign in up - Step 3
       </Text>
       <Text
         style={[
@@ -96,68 +96,86 @@ const SignInTo = () => {
               fontSize: perfectSize(14),
               lineHeight: perfectSize(21),
               marginLeft: "2%",
-              color: colors.blueColor,
-              fontFamily: "PoppinsRegular",
+              color: colors.darkGreen,
+              fontFamily: "PoppinsSemiBold",
             },
           ]}
         >
-          Register here !
+          Login here !
         </Text>
       </View>
       <View
-        style={[
-          styles.inputContainer,
-          { marginTop: "10%", marginBottom: "5%" },
-        ]}
+        style={[styles.inputContainer, { marginTop: "5%", marginBottom: "5%" }]}
       >
         <TextInput
           style={styles.textInput}
-          placeholder="Enter email or user name"
-          placeholderTextColor={colors.blueColor}
-          keyboardType="email-address"
+          placeholder="Choose your category: "
+          placeholderTextColor={colors.blackColor}
+        />
+      </View>
+
+      <View style={[styles.inputContainer, { marginBottom: "5%" }]}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="You offer:"
+          placeholderTextColor={colors.blackColor}
+        />
+      </View>
+      <View style={[styles.inputContainer, { marginBottom: "5%" }]}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Are you registered bussines?"
+          placeholderTextColor={colors.blackColor}
         />
       </View>
 
       <View
         style={[
           styles.inputContainer,
-          {
-            marginTop: "3%",
-            marginBottom: "5%",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          },
+          { marginBottom: "5%", height: perfectSize(90) },
         ]}
       >
         <TextInput
           style={styles.textInput}
-          placeholder="Password"
-          placeholderTextColor={colors.blueColor}
-          secureTextEntry={true}
+          placeholder="Do you pay tax?"
+          placeholderTextColor={colors.blackColor}
         />
-        <EyeIcon />
       </View>
-
+      <View style={{flexDirection:'row', alignSelf:'center', position: "absolute", bottom:115}}>
       <Text
         style={{
-          marginRight: "8%",
-          alignSelf: "flex-end",
-          fontSize: perfectSize(13),
+          marginRight: "1%",
+          
+          fontSize: perfectSize(12),
           fontWeight: "400",
           fontFamily: "PoppinsRegular",
-          color: colors.blueColor,
+          color: colors.blackColor,
         }}
       >
-        Forgor password ?
+        By clicking ”Register” you agree to the 
       </Text>
+      <Text
+        style={{
+        
+          
+          fontSize: perfectSize(12),
+          fontWeight: "400",
+          fontFamily: "PoppinsRegular",
+          color: colors.darkGreen,
+        }}
+      >
+        terms of use
+      </Text>
+      </View>
 
-      <FormButtonBlue buttonTitle="Login" />
+      <View style={{ position: "absolute", width: "100%", bottom: perfectSize(48) }}>
+      <FormButtonGreen   buttonTitle="Register" />
+      </View>
     </View>
   );
 };
 
-export default SignInTo;
+export default SignInUpStepGreen3;
 
 const styles = StyleSheet.create({
   container: {
@@ -174,13 +192,15 @@ const styles = StyleSheet.create({
   inputContainer: {
     height: perfectSize(64),
     width: "84%",
-    backgroundColor: colors.lightBlueColor,
+    backgroundColor: colors.whiteBackImage,
     alignSelf: "center",
     justifyContent: "center",
+    borderBottomWidth: perfectSize(2),
+    borderColor: colors.darkGreen
   },
   textInput: {
     paddingLeft: perfectSize(20),
-    color: colors.blueColor,
+    color: colors.blackColor,
     fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",

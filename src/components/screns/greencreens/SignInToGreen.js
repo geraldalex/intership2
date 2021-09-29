@@ -2,10 +2,12 @@ import React from "react";
 import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
-import FormButtonBlue from "../myComponents/FormButtonBlue";
-import EyeIcon from "../myComponents/EyeIcon";
 
-const SignInTo = () => {
+
+import FormButtonGreen from "../myComponents/FormButtonGreen";
+import EyeIconGreen from "../myComponents/EyeIconGreen";
+
+const SignInToGreen = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
@@ -96,7 +98,7 @@ const SignInTo = () => {
               fontSize: perfectSize(14),
               lineHeight: perfectSize(21),
               marginLeft: "2%",
-              color: colors.blueColor,
+              color: colors.darkGreen,
               fontFamily: "PoppinsRegular",
             },
           ]}
@@ -113,7 +115,7 @@ const SignInTo = () => {
         <TextInput
           style={styles.textInput}
           placeholder="Enter email or user name"
-          placeholderTextColor={colors.blueColor}
+          placeholderTextColor={colors.blackColor}
           keyboardType="email-address"
         />
       </View>
@@ -133,10 +135,10 @@ const SignInTo = () => {
         <TextInput
           style={styles.textInput}
           placeholder="Password"
-          placeholderTextColor={colors.blueColor}
+          placeholderTextColor={colors.blackColor}
           secureTextEntry={true}
         />
-        <EyeIcon />
+        <EyeIconGreen />
       </View>
 
       <Text
@@ -146,18 +148,20 @@ const SignInTo = () => {
           fontSize: perfectSize(13),
           fontWeight: "400",
           fontFamily: "PoppinsRegular",
-          color: colors.blueColor,
+          color: colors.darkGreen,
         }}
       >
         Forgor password ?
       </Text>
 
-      <FormButtonBlue buttonTitle="Login" />
+      <View style={{ position: "absolute", width: "100%", bottom: perfectSize(48) }}>
+      <FormButtonGreen   buttonTitle="Login" />
+      </View>
     </View>
   );
 };
 
-export default SignInTo;
+export default SignInToGreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -174,13 +178,15 @@ const styles = StyleSheet.create({
   inputContainer: {
     height: perfectSize(64),
     width: "84%",
-    backgroundColor: colors.lightBlueColor,
+    backgroundColor: colors.whiteBackImage,
     alignSelf: "center",
     justifyContent: "center",
+    borderBottomWidth: perfectSize(2),
+    borderColor: colors.darkGreen
   },
   textInput: {
     paddingLeft: perfectSize(20),
-    color: colors.blueColor,
+    color: colors.blackColor,
     fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",

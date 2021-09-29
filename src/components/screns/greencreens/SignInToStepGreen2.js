@@ -1,11 +1,17 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
-import FormButtonBlue from "../myComponents/FormButtonBlue";
-import EyeIcon from "../myComponents/EyeIcon";
+import FormButtonGreen from "../myComponents/FormButtonGreen";
 
-const SignInTo = () => {
+const SignInToStepGreen2 = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
@@ -45,7 +51,7 @@ const SignInTo = () => {
           },
         ]}
       >
-        Sign in to
+        Forgot password
       </Text>
       <Text
         style={[
@@ -72,7 +78,7 @@ const SignInTo = () => {
           },
         ]}
       >
-        If you don’t have an account register
+        You may not have an account yet
       </Text>
       <View style={{ flexDirection: "row" }}>
         <Text
@@ -96,68 +102,62 @@ const SignInTo = () => {
               fontSize: perfectSize(14),
               lineHeight: perfectSize(21),
               marginLeft: "2%",
-              color: colors.blueColor,
+              color: colors.darkGreen,
               fontFamily: "PoppinsRegular",
             },
           ]}
         >
-          Register here !
+          Login here !
         </Text>
       </View>
       <View
         style={[
           styles.inputContainer,
-          { marginTop: "10%", marginBottom: "5%" },
+          { marginTop: "10%" },
+          { flexDirection: "row" },
+          { justifyContent: "space-between" },
+          { alignItems: "center" },
         ]}
       >
         <TextInput
           style={styles.textInput}
-          placeholder="Enter email or user name"
-          placeholderTextColor={colors.blueColor}
-          keyboardType="email-address"
+          placeholder="Enter code"
+          placeholderTextColor={colors.blackColor}
         />
+        <TouchableOpacity style={styles.miniButtonContainer}>
+          <Text style={styles.buttonTitle}>Send</Text>
+        </TouchableOpacity>
       </View>
-
       <View
         style={[
           styles.inputContainer,
-          {
-            marginTop: "3%",
-            marginBottom: "5%",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          },
+          { marginTop: "5%", marginBottom: "26%" },
+          { flexDirection: "row" },
+          { justifyContent: "space-between" },
+          { alignItems: "center" },
         ]}
       >
         <TextInput
           style={styles.textInput}
-          placeholder="Password"
-          placeholderTextColor={colors.blueColor}
-          secureTextEntry={true}
+          placeholder="Phone code"
+          placeholderTextColor={colors.blackColor}
+          keyboardType="phone-pad"
         />
-        <EyeIcon />
+        <TouchableOpacity style={styles.miniButtonContainer}>
+          <Text style={styles.buttonTitle}>Send</Text>
+        </TouchableOpacity>
       </View>
 
-      <Text
-        style={{
-          marginRight: "8%",
-          alignSelf: "flex-end",
-          fontSize: perfectSize(13),
-          fontWeight: "400",
-          fontFamily: "PoppinsRegular",
-          color: colors.blueColor,
-        }}
+      <View
+        style={{ position: "absolute", width: "100%", bottom: perfectSize(48) }}
       >
-        Forgor password ?
-      </Text>
-
-      <FormButtonBlue buttonTitle="Login" />
+        <FormButtonGreen buttonTitle="Register" />
+      </View>
     </View>
   );
 };
 
-export default SignInTo;
+export default SignInToStepGreen2;
 
 const styles = StyleSheet.create({
   container: {
@@ -174,16 +174,49 @@ const styles = StyleSheet.create({
   inputContainer: {
     height: perfectSize(64),
     width: "84%",
-    backgroundColor: colors.lightBlueColor,
+    backgroundColor: colors.whiteBackImage,
+    borderBottomWidth:perfectSize(2),
+    borderColor: colors.darkGreen,
     alignSelf: "center",
     justifyContent: "center",
   },
   textInput: {
     paddingLeft: perfectSize(20),
-    color: colors.blueColor,
+    color: colors.blackColor,
     fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
-    width:'80%'
+    width:'60%'
+  },
+  miniButtonContainer: {
+    width: "25%",
+    height: "80%",
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    backgroundColor: colors.darkGreen,
+    borderRadius: 5,
+
+    padding: perfectSize(10),
+    marginRight: "5%",
+    shadowColor: colors.darkGreen,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.32,
+    shadowRadius: 5.46,
+
+    elevation: 8,
+  },
+  buttonTitle: {
+    fontWeight: "bold",
+    fontSize: perfectSize(20),
+    color: colors.whiteColor,
+  },
+
+  buttonTitle: {
+    fontSize: perfectSize(14),
+    color: colors.whiteColor,
   },
 });

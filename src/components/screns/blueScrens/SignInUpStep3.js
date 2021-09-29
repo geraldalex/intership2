@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import FormButtonBlue from "../myComponents/FormButtonBlue";
-import EyeIcon from "../myComponents/EyeIcon";
+
 
 const SignInUpStep3 = () => {
   const [loaded] = useFonts({
@@ -183,10 +183,10 @@ const styles = StyleSheet.create({
   textInput: {
     paddingLeft: perfectSize(20),
     color: colors.blueColor,
-    fontSize: perfectSize(12),
+    fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
     width: "50%",
-    width:'60%'
+    width:'80%'
   },
 });

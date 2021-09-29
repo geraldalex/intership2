@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
-import FormButtonBlue from "../myComponents/FormButtonBlue";
-import EyeIcon from "../myComponents/EyeIcon";
+import FormButtonGreen from "../myComponents/FormButtonGreen";
 
-const SignInTo = () => {
+
+const ForgotPasswordGreen2 = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
@@ -45,7 +45,7 @@ const SignInTo = () => {
           },
         ]}
       >
-        Sign in to
+        Forgot password
       </Text>
       <Text
         style={[
@@ -72,7 +72,7 @@ const SignInTo = () => {
           },
         ]}
       >
-        If you don’t have an account register
+        You may not have an account yet
       </Text>
       <View style={{ flexDirection: "row" }}>
         <Text
@@ -86,7 +86,7 @@ const SignInTo = () => {
             },
           ]}
         >
-          You can
+          Make it
         </Text>
         <Text
           style={[
@@ -96,7 +96,7 @@ const SignInTo = () => {
               fontSize: perfectSize(14),
               lineHeight: perfectSize(21),
               marginLeft: "2%",
-              color: colors.blueColor,
+              color: colors.darkGreen,
               fontFamily: "PoppinsRegular",
             },
           ]}
@@ -104,60 +104,24 @@ const SignInTo = () => {
           Register here !
         </Text>
       </View>
-      <View
-        style={[
-          styles.inputContainer,
-          { marginTop: "10%", marginBottom: "5%" },
-        ]}
-      >
+      <View style={[styles.inputContainer, { marginTop: "10%" }]}>
         <TextInput
           style={styles.textInput}
-          placeholder="Enter email or user name"
-          placeholderTextColor={colors.blueColor}
+          placeholder="Enter email"
+          placeholderTextColor={colors.blackColor}
           keyboardType="email-address"
         />
       </View>
 
-      <View
-        style={[
-          styles.inputContainer,
-          {
-            marginTop: "3%",
-            marginBottom: "5%",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          },
-        ]}
-      >
-        <TextInput
-          style={styles.textInput}
-          placeholder="Password"
-          placeholderTextColor={colors.blueColor}
-          secureTextEntry={true}
-        />
-        <EyeIcon />
+      
+<View style={{ position: "absolute", width: "100%", bottom: perfectSize(48) }}>
+      <FormButtonGreen   buttonTitle="SEND" />
       </View>
-
-      <Text
-        style={{
-          marginRight: "8%",
-          alignSelf: "flex-end",
-          fontSize: perfectSize(13),
-          fontWeight: "400",
-          fontFamily: "PoppinsRegular",
-          color: colors.blueColor,
-        }}
-      >
-        Forgor password ?
-      </Text>
-
-      <FormButtonBlue buttonTitle="Login" />
     </View>
   );
 };
 
-export default SignInTo;
+export default ForgotPasswordGreen2;
 
 const styles = StyleSheet.create({
   container: {
@@ -174,13 +138,15 @@ const styles = StyleSheet.create({
   inputContainer: {
     height: perfectSize(64),
     width: "84%",
-    backgroundColor: colors.lightBlueColor,
+    backgroundColor: colors.whiteBackImage,
     alignSelf: "center",
     justifyContent: "center",
+    borderColor: colors.darkGreen,
+    borderBottomWidth: perfectSize(2),
   },
   textInput: {
     paddingLeft: perfectSize(20),
-    color: colors.blueColor,
+    color: colors.blackColor,
     fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",

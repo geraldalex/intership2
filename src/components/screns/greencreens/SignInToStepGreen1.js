@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
-import FormButtonBlue from "../myComponents/FormButtonBlue";
-import EyeIcon from "../myComponents/EyeIcon";
+import FormButtonGreen from "../myComponents/FormButtonGreen";
+import EyeIconGreen from "../myComponents/EyeIconGreen";
 
-const SignInTo = () => {
+const SignInToStepGreen1 = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
@@ -45,7 +45,7 @@ const SignInTo = () => {
           },
         ]}
       >
-        Sign in to
+        Sign in up - Step 1
       </Text>
       <Text
         style={[
@@ -96,25 +96,38 @@ const SignInTo = () => {
               fontSize: perfectSize(14),
               lineHeight: perfectSize(21),
               marginLeft: "2%",
-              color: colors.blueColor,
+              color: colors.darkGreen,
               fontFamily: "PoppinsRegular",
             },
           ]}
         >
-          Register here !
+          Login here !
         </Text>
       </View>
       <View
-        style={[
-          styles.inputContainer,
-          { marginTop: "10%", marginBottom: "5%" },
-        ]}
+        style={[styles.inputContainer, { marginTop: "5%", marginBottom: "5%" }]}
       >
         <TextInput
           style={styles.textInput}
-          placeholder="Enter email or user name"
-          placeholderTextColor={colors.blueColor}
+          placeholder="Create User name"
+          placeholderTextColor={colors.blackColor}
+        />
+      </View>
+
+      <View style={[styles.inputContainer, { marginBottom: "5%" }]}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Email"
+          placeholderTextColor={colors.blackColor}
           keyboardType="email-address"
+        />
+      </View>
+      <View style={[styles.inputContainer, { marginBottom: "5%" }]}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Phone Number"
+          placeholderTextColor={colors.blackColor}
+          keyboardType="phone-pad"
         />
       </View>
 
@@ -122,7 +135,6 @@ const SignInTo = () => {
         style={[
           styles.inputContainer,
           {
-            marginTop: "3%",
             marginBottom: "5%",
             flexDirection: "row",
             justifyContent: "space-between",
@@ -133,31 +145,41 @@ const SignInTo = () => {
         <TextInput
           style={styles.textInput}
           placeholder="Password"
-          placeholderTextColor={colors.blueColor}
+          placeholderTextColor={colors.blackColor}
           secureTextEntry={true}
         />
-        <EyeIcon />
+        <EyeIconGreen />
       </View>
 
-      <Text
-        style={{
-          marginRight: "8%",
-          alignSelf: "flex-end",
-          fontSize: perfectSize(13),
-          fontWeight: "400",
-          fontFamily: "PoppinsRegular",
-          color: colors.blueColor,
-        }}
+      <View
+        style={[
+          styles.inputContainer,
+          {
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          },
+        ]}
       >
-        Forgor password ?
-      </Text>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Confirm Password"
+          placeholderTextColor={colors.blackColor}
+          secureTextEntry={true}
+        />
+        <EyeIconGreen />
+      </View>
 
-      <FormButtonBlue buttonTitle="Login" />
+      <View
+        style={{ position: "absolute", width: "100%", bottom: perfectSize(48) }}
+      >
+        <FormButtonGreen buttonTitle="Next" />
+      </View>
     </View>
   );
 };
 
-export default SignInTo;
+export default SignInToStepGreen1;
 
 const styles = StyleSheet.create({
   container: {
@@ -174,13 +196,15 @@ const styles = StyleSheet.create({
   inputContainer: {
     height: perfectSize(64),
     width: "84%",
-    backgroundColor: colors.lightBlueColor,
+    backgroundColor: colors.whiteBackImage,
     alignSelf: "center",
     justifyContent: "center",
+    borderBottomWidth: perfectSize(2),
+    borderColor: colors.darkGreen
   },
   textInput: {
     paddingLeft: perfectSize(20),
-    color: colors.blueColor,
+    color: colors.blackColor,
     fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",

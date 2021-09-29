@@ -89,5 +89,6 @@ const styles = StyleSheet.create({
     paddingLeft: perfectSize(20),
     color: colors.whiteColor,
     fontSize: perfectSize(14),
+    width:'80%'
   },
 });

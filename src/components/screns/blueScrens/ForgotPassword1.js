@@ -157,8 +157,9 @@ const styles = StyleSheet.create({
   textInput: {
     paddingLeft: perfectSize(20),
     color: colors.blueColor,
-    fontSize: perfectSize(12),
+    fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
+    width:'80%'
   },
 });

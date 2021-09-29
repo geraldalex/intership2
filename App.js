@@ -14,6 +14,13 @@ import SignInTo from './src/components/screns/blueScrens/SignInTo';
 import SignInToStep1 from './src/components/screns/blueScrens/SignInToStep1';
 import SignInUpStep3 from './src/components/screns/blueScrens/SignInUpStep3';
 import SignInToStep2 from './src/components/screns/blueScrens/SignInToStep2';
+import ForgotPasswordGreen1 from './src/components/screns/greencreens/ForgotPasswordGreen1';
+import ForgotPasswordGreen2 from './src/components/screns/greencreens/ForgotPasswordGreen2';
+import SignInToGreen from './src/components/screns/greencreens/SignInToGreen';
+import SignInUpStepGreen3 from './src/components/screns/greencreens/SignInUpStepGreen3';
+import SignInToStepGreen2 from './src/components/screns/greencreens/SignInToStepGreen2';
+import SignInToStepGreen1 from './src/components/screns/greencreens/SignInToStepGreen1';
+
 
 export default function App() {
 
@@ -38,6 +45,12 @@ export default function App() {
       <Drawer.Screen name="SignInToStep1" component={SignInToStep1} />
       <Drawer.Screen name="SignInUpStep3" component={SignInUpStep3} />
       <Drawer.Screen name="SignInToStep2" component={SignInToStep2} />
+      <Drawer.Screen name="ForgotPasswordGreen1" component={ForgotPasswordGreen1} />
+      <Drawer.Screen name="ForgotPasswordGreen2" component={ForgotPasswordGreen2} />
+      <Drawer.Screen name="SignInToGreen" component={SignInToGreen} />
+      <Drawer.Screen name="SignInUpStepGreen3" component={SignInUpStepGreen3} />
+      <Drawer.Screen name="SignInToStepGreen2" component={SignInToStepGreen2} />
+      <Drawer.Screen name="SignInToStepGreen1" component={SignInToStepGreen1} />
      
     </Drawer.Navigator>
   </NavigationContainer>
