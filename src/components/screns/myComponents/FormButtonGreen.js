@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.darkGreen,
 
     padding: perfectSize(10),
-    marginTop: "6%",
+    //marginTop: "6%",
 
     shadowColor: colors.darkGreen,
     shadowOffset: {

@@ -21,6 +21,10 @@ import SignInUpStepGreen3 from './src/components/screns/greencreens/SignInUpStep
 import SignInToStepGreen2 from './src/components/screns/greencreens/SignInToStepGreen2';
 import SignInToStepGreen1 from './src/components/screns/greencreens/SignInToStepGreen1';
 import Settings from './src/components/screns/settings/Settings';
+import SettingsFQ from './src/components/screns/settings/SettingsFQ';
+import Settings2 from './src/components/screns/settings/Settings2';
+import SettingsFQ2 from './src/components/screns/settings/SettingsFQ2';
+import SettingsPaymnets from './src/components/screns/settings/SettingsPaymnets';
 
 
 export default function App() {
@@ -53,6 +57,10 @@ export default function App() {
       <Drawer.Screen name="SignInToStepGreen2" component={SignInToStepGreen2} />
       <Drawer.Screen name="SignInToStepGreen1" component={SignInToStepGreen1} />
       <Drawer.Screen name="Settings" component={Settings} />
+      <Drawer.Screen name="Settings2" component={Settings2} />
+      <Drawer.Screen name="SettingsFQ" component={SettingsFQ} />
+      <Drawer.Screen name="SettingsFQ2" component={SettingsFQ2} />
+      <Drawer.Screen name="SettingsPaymnets" component={SettingsPaymnets} />
      
     </Drawer.Navigator>
   </NavigationContainer>

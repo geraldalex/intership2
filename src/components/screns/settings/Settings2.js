@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar, TextInput,TextBase } from "react-native";
+import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import TabBar from "../myComponents/TabBar";
@@ -9,7 +9,7 @@ import FormButtonGreen from "../myComponents/FormButtonGreen";
 import Accordian from "../myComponents/Accordian";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
-const Settings = () => {
+const Settings2 = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
@@ -100,14 +100,35 @@ const Settings = () => {
         </Text>
       </TouchableOpacity>
       <FormButtonGreen buttonTitle="Talent Profile" />
-      <ScrollView style={{ marginTop: "6%" }}>
+      <View style={{ marginTop: "5%" }}>
         <Accordian title="Notification" />
-        <Accordian title="Serveces" />
-        <Accordian title="Locations" />
-        <Accordian title="Analytics" />
-        <Accordian title="F&Q" />
-        <Accordian title="Paymnets" />
-        <Accordian title="Contect Support" />
+        <View
+          style={{
+            height: perfectSize(1),
+            borderTopWidth: perfectSize(1),
+            borderColor: colors.grayColor,
+          }}
+        />
+      </View>
+      <ScrollView style={{ marginTop: "5%" }}>
+        <View style={{ marginBottom: "5%" }}>
+          <FormButtonGreen buttonTitle="Serveces" />
+        </View>
+        <View style={{ marginBottom: "5%" }}>
+          <FormButtonGreen buttonTitle="Locations" />
+        </View>
+        <View style={{ marginBottom: "5%" }}>
+          <FormButtonGreen buttonTitle="Analytics" />
+        </View>
+        <View style={{ marginBottom: "5%" }}>
+          <FormButtonGreen buttonTitle="F&Q" />
+        </View>
+        <View style={{ marginBottom: "5%" }}>
+          <FormButtonGreen buttonTitle="Paymnets" />
+        </View>
+        <View style={{ marginBottom: "20%" }}>
+          <FormButtonGreen buttonTitle="Contect Support" />
+        </View>
       </ScrollView>
 
       <TabBar />
@@ -115,7 +136,7 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default Settings2;
 
 const styles = StyleSheet.create({
   container: {
