@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../theme";
-import ArrowIcon from "./myComponents/ArrowIcon";
 import FormButton from "./myComponents/FormButton";
 import OkIcon from "./myComponents/OkIcon";
 
