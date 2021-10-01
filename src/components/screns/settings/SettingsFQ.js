@@ -145,7 +145,5 @@ const styles = StyleSheet.create({
   textArea: {
     height: perfectSize(150),
     color: colors.blackColor,
-    
-    
   },
 });

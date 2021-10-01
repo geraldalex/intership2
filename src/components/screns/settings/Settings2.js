@@ -8,6 +8,7 @@ import PhotoIcon from "../myComponents/PhotoIcon";
 import FormButtonGreen from "../myComponents/FormButtonGreen";
 import Accordian from "../myComponents/Accordian";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import LogoIcon from "../myComponents/LogoIcon";
 
 const Settings2 = () => {
   const [loaded] = useFonts({
@@ -23,21 +24,9 @@ const Settings2 = () => {
   return (
     <View style={styles.container}>
       <StatusBar translucent barStyle="light-content" />
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginTop: "16%",
-            fontSize: perfectSize(18),
-            fontWeight: "600",
-            marginBottom: "7%",
-            lineHeight: perfectSize(27),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Your Logo
-      </Text>
+      <View style={{ marginLeft: "8%", marginTop: "10%", marginBottom: "5%" }}>
+        <LogoIcon />
+      </View>
       <Text
         style={[
           styles.headersTitle,

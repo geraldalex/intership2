@@ -3,13 +3,17 @@ import { StyleSheet, Text, View, StatusBar, Image } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import TabBar from "../myComponents/TabBar";
-import FormButtonGreen from "../myComponents/FormButtonGreen";
+import LogoIcon from "../myComponents/LogoIcon";
+import { ScrollView } from "react-native-gesture-handler";
 
 const SettingsPaymnets = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsSemiBold: require("../../../../assets/fonts/Poppins-Medium.ttf"),
+    RobotoLight: require("../../../../assets/fonts/Roboto-Light.ttf"),
+    RobotoMedium: require("../../../../assets/fonts/Roboto-Medium.ttf"),
+    RobotoRegular: require("../../../../assets/fonts/Roboto-Regular.ttf"),
   });
 
   if (!loaded) {
@@ -19,21 +23,9 @@ const SettingsPaymnets = () => {
   return (
     <View style={styles.container}>
       <StatusBar translucent barStyle="light-content" />
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginTop: "16%",
-            fontSize: perfectSize(18),
-            fontWeight: "600",
-            marginBottom: "7%",
-            lineHeight: perfectSize(27),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Your Logo
-      </Text>
+      <View style={{ marginLeft: "8%", marginTop: "10%", marginBottom: "5%" }}>
+        <LogoIcon />
+      </View>
       <Text
         style={[
           styles.headersTitle,
@@ -45,40 +37,106 @@ const SettingsPaymnets = () => {
           },
         ]}
       >
-        Paymnets
+        My Earnings
       </Text>
 
-      <Text
-        style={{
-          color: colors.blackColor,
-          fontWeight: "500",
-          fontSize: perfectSize(21),
-          lineHeight: perfectSize(31),
-          fontFamily: "PoppinsMedium",
-          marginLeft: "8%",
-        }}
-      >
-        Your cards
-      </Text>
-      <Text
-        style={{
-          color: colors.blackColor,
-          fontWeight: "bold",
-          fontSize: perfectSize(16),
-          lineHeight: perfectSize(18.75),
-          fontFamily: "PoppinsMedium",
-          marginLeft: "8%",
-          marginTop: "5%",
-        }}
-      >
-        Your payment cards
-      </Text>
       <View style={{ alignItems: "center" }}>
-        <Image source={require("../../../../assets/Card.png")} />
+        <Image
+          source={require("../../../../assets/Card.png")}
+          style={{ resizeMode: "contain", width: "98%" }}
+        />
       </View>
 
-      <FormButtonGreen buttonTitle="Add Cardend" />
+      <Text
+        style={{
+          fontSize: perfectSize(16),
+          lineHeight: perfectSize(18),
+          fontFamily: "RobotoLight",
+          alignSelf: "center",
+          marginLeft: "8%",
+          marginRight: "8%",
+        }}
+      >
+        You will receive funds after 7 days from client’s payment.
+      </Text>
+      <ScrollView>
+        <View style={styles.grayLine} />
+        <View
+          style={{
+            flexDirection: "row",
+            marginHorizontal: "8%",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text style={styles.transactionText}>01/01/2022</Text>
+          <Text
+            style={[
+              styles.transactionText,
+              { position: "absolute", left: "50%" },
+            ]}
+          >
+            —
+          </Text>
+          <Text style={styles.transactionText}>20.000$</Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            marginHorizontal: "8%",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text style={styles.transactionText}>Client Name</Text>
+          <Text
+            style={[
+              styles.transactionText,
+              { position: "absolute", left: "50%" },
+            ]}
+          >
+            —
+          </Text>
+          <Text style={styles.transactionText}>Service Name</Text>
+        </View>
+        <View style={styles.grayLine} />
 
+        <View
+          style={{
+            flexDirection: "row",
+            marginHorizontal: "8%",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text style={styles.transactionText}>01/01/2022</Text>
+          <Text
+            style={[
+              styles.transactionText,
+              { position: "absolute", left: "50%" },
+            ]}
+          >
+            —
+          </Text>
+          <Text style={styles.transactionText}>20.000$</Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            marginHorizontal: "8%",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text style={styles.transactionText}>Client Name</Text>
+          <Text
+            style={[
+              styles.transactionText,
+              { position: "absolute", left: "50%" },
+            ]}
+          >
+            —
+          </Text>
+          <Text style={styles.transactionText}>Service Name</Text>
+        </View>
+        <View style={styles.grayLine} />
+      </ScrollView>
       <TabBar />
     </View>
   );
@@ -113,5 +171,16 @@ const styles = StyleSheet.create({
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
     width: "80%",
+  },
+  transactionText: {
+    fontSize: perfectSize(16),
+    fontFamily: "RobotoMedium",
+  },
+  grayLine: {
+    height: perfectSize(1),
+    borderTopWidth: perfectSize(1),
+    borderColor: colors.grayColor,
+    marginTop: "5%",
+    marginBottom: "5%",
   },
 });

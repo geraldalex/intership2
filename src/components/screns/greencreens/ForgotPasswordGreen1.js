@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import FormButtonGreen from "../myComponents/FormButtonGreen";
+import LogoIcon from "../myComponents/LogoIcon";
 
 
 const ForgotPasswordGreen1 = () => {
@@ -19,21 +20,9 @@ const ForgotPasswordGreen1 = () => {
   return (
     <View style={styles.container}>
       <StatusBar translucent barStyle="light-content" />
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginTop: "16%",
-            fontSize: perfectSize(18),
-            fontWeight: "600",
-            marginBottom: "7%",
-            lineHeight: perfectSize(27),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Your Logo
-      </Text>
+      <View style={{ marginLeft: "8%", marginTop: "10%", marginBottom: "5%" }}>
+        <LogoIcon />
+      </View>
       <Text
         style={[
           styles.headersTitle,

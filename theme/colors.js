@@ -14,5 +14,6 @@ export default colors = {
     darkGreen: '#035A31',
     grayColor: '#D0D2CF',
    grayLineColor: '#1F3330',
+   darkRedColor: '#C70909'
     
 }

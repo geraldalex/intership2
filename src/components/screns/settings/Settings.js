@@ -8,6 +8,8 @@ import PhotoIcon from "../myComponents/PhotoIcon";
 import FormButtonGreen from "../myComponents/FormButtonGreen";
 import Accordian from "../myComponents/Accordian";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import LogoIcon from "../myComponents/LogoIcon";
+import FormButtonRed from "../myComponents/FormButtonRed";
 
 const Settings = () => {
   const [loaded] = useFonts({
@@ -23,34 +25,10 @@ const Settings = () => {
   return (
     <View style={styles.container}>
       <StatusBar translucent barStyle="light-content" />
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginTop: "16%",
-            fontSize: perfectSize(18),
-            fontWeight: "600",
-            marginBottom: "7%",
-            lineHeight: perfectSize(27),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Your Logo
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginBottom: "2%",
-            fontWeight: "600",
-            lineHeight: perfectSize(39),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Settings
-      </Text>
+      <View style={{ marginLeft: "8%", marginTop: "10%", marginBottom: "5%" }}>
+        <LogoIcon />
+      </View>
+     
 
       <View
         style={{
@@ -63,10 +41,10 @@ const Settings = () => {
         <Text
           style={{
             color: colors.blackColor,
-            fontWeight: "500",
-            fontSize: perfectSize(21),
+            fontWeight: "600",
+            fontSize: perfectSize(26),
             lineHeight: perfectSize(31),
-            fontFamily: "PoppinsMedium",
+            fontFamily: "PoppinsSemiBold",
           }}
         >
           Settings
@@ -99,15 +77,20 @@ const Settings = () => {
           Add image
         </Text>
       </TouchableOpacity>
-      <FormButtonGreen buttonTitle="Talent Profile" />
+      <FormButtonGreen buttonTitle="My Profile" />
       <ScrollView style={{ marginTop: "6%" }}>
-        <Accordian title="Notification" />
-        <Accordian title="Serveces" />
-        <Accordian title="Locations" />
-        <Accordian title="Analytics" />
+        <Accordian title="My Services" />
+        <Accordian title="My Locations " />
+        <Accordian title="My Earnings" />
+        <Accordian title="Notifications" />
+        <Accordian title="Analytics " />
         <Accordian title="F&Q" />
-        <Accordian title="Paymnets" />
-        <Accordian title="Contect Support" />
+        <Accordian title="Contact Support " />
+        <View style={{ height: perfectSize(1),
+    borderTopWidth: perfectSize(1),
+    borderColor: colors.grayColor,}}/>
+    <FormButtonRed buttonTitle='Log Out'/>
+    <View style={{marginTop:'20%'}}/>
       </ScrollView>
 
       <TabBar />
