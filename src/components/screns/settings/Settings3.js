@@ -12,7 +12,7 @@ import { useFonts } from "expo-font";
 import TabBar from "../myComponents/TabBar";
 import LogoIcon from "../myComponents/LogoIcon";
 
-const Settings2 = () => {
+const Settings3 = () => {
   const [isSelected1, setSelection1] = React.useState(false);
   const [isSelected2, setSelection2] = React.useState(false);
   const [isSelected3, setSelection3] = React.useState(false);
@@ -104,7 +104,7 @@ const Settings2 = () => {
   );
 };
 
-export default Settings2;
+export default Settings3;
 
 const styles = StyleSheet.create({
   container: {

@@ -1,11 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
-
-
 import FormButtonGreen from "../myComponents/FormButtonGreen";
-import EyeIconGreen from "../myComponents/EyeIconGreen";
+import LogoIcon from "../myComponents/LogoIcon";
+import EyeIcon from "../myComponents/EyeIcon";
 
 const SignInToGreen = () => {
   const [loaded] = useFonts({
@@ -19,145 +18,44 @@ const SignInToGreen = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar translucent barStyle="light-content" />
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginTop: "16%",
-            fontSize: perfectSize(18),
-            fontWeight: "600",
-            marginBottom: "7%",
-            lineHeight: perfectSize(27),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Your Logo
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginBottom: "2%",
-            fontWeight: "600",
-            lineHeight: perfectSize(39),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Sign in to
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            fontWeight: "500",
-            fontSize: perfectSize(21),
-            lineHeight: perfectSize(31),
-            marginBottom: "8%",
-            fontFamily: "PoppinsMedium",
-          },
-        ]}
-      >
-        Lorem Ipsum is simply{" "}
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            fontWeight: "400",
-            fontSize: perfectSize(14),
-            lineHeight: perfectSize(21),
-            fontFamily: "PoppinsRegular",
-          },
-        ]}
-      >
-        If you don’t have an account register
-      </Text>
-      <View style={{ flexDirection: "row" }}>
-        <Text
-          style={[
-            styles.headersTitle,
-            {
-              fontWeight: "400",
-              fontSize: perfectSize(14),
-              lineHeight: perfectSize(21),
-              fontFamily: "PoppinsRegular",
-            },
-          ]}
-        >
-          You can
-        </Text>
-        <Text
-          style={[
-            styles.headersTitle,
-            {
-              fontWeight: "400",
-              fontSize: perfectSize(14),
-              lineHeight: perfectSize(21),
-              marginLeft: "2%",
-              color: colors.darkGreen,
-              fontFamily: "PoppinsRegular",
-            },
-          ]}
-        >
-          Register here !
-        </Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.logoContainer}>
+        <LogoIcon />
       </View>
-      <View
-        style={[
-          styles.inputContainer,
-          { marginTop: "10%", marginBottom: "5%" },
-        ]}
-      >
+      <Text style={styles.headersTitle}>Sign In</Text>
+
+     
+
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
-          placeholder="Enter email or user name"
+          placeholder="Email or Username"
           placeholderTextColor={colors.blackColor}
           keyboardType="email-address"
         />
       </View>
 
-      <View
-        style={[
-          styles.inputContainer,
-          {
-            marginTop: "3%",
-            marginBottom: "5%",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          },
-        ]}
-      >
+      <View style={styles.rowInputContainer}>
         <TextInput
           style={styles.textInput}
           placeholder="Password"
           placeholderTextColor={colors.blackColor}
           secureTextEntry={true}
         />
-        <EyeIconGreen />
+        <EyeIcon />
       </View>
-
       <Text
-        style={{
-          marginRight: "8%",
-          alignSelf: "flex-end",
-          fontSize: perfectSize(13),
-          fontWeight: "400",
-          fontFamily: "PoppinsRegular",
-          color: colors.darkGreen,
-        }}
+        style={styles.forgotPaswordText}
       >
-        Forgor password ?
+        Forgot password ?
       </Text>
 
-      <View style={{ position: "absolute", width: "100%", bottom: perfectSize(48) }}>
-      <FormButtonGreen   buttonTitle="Login" />
+      <View style={styles.buttonContainer}>
+        <FormButtonGreen buttonTitle="SEND" />
+        <Text style={styles.underButtonText}>Don’t have an account?!</Text>
+        <Text style={styles.registerText}>Register Here</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -169,11 +67,21 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     backgroundColor: colors.whiteBackImage,
   },
+  logoContainer: {
+    marginLeft: "8%",
+    marginTop: "10%",
+    marginBottom: "5%",
+  },
   headersTitle: {
     color: colors.blackColor,
     fontSize: perfectSize(26),
-    marginLeft: "8%",
+    marginBottom: "8%",
+    fontWeight: "600",
+    lineHeight: perfectSize(39),
+    fontFamily: "PoppinsSemiBold",
+    alignSelf:'center'
   },
+ 
 
   inputContainer: {
     height: perfectSize(64),
@@ -181,15 +89,62 @@ const styles = StyleSheet.create({
     backgroundColor: colors.whiteBackImage,
     alignSelf: "center",
     justifyContent: "center",
+    borderColor: colors.darkGreen,
     borderBottomWidth: perfectSize(2),
-    borderColor: colors.darkGreen
+    marginTop: "15%",
+  },
+  rowInputContainer: {
+    height: perfectSize(64),
+    width: "84%",
+    backgroundColor: colors.whiteBackImage,
+    alignSelf: "center",
+    justifyContent: "center",
+    borderColor: colors.darkGreen,
+    borderBottomWidth: perfectSize(2),
+    marginTop: "3%",
+    marginBottom: "5%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   textInput: {
-    paddingLeft: perfectSize(20),
+    paddingLeft: perfectSize(10),
     color: colors.blackColor,
     fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
-    width:'80%'
+    width: "80%",
   },
+  forgotPaswordText: {
+    marginRight: "8%",
+    alignSelf: "flex-end",
+    fontSize: perfectSize(13),
+    fontWeight: "400",
+    fontFamily: "PoppinsRegular",
+    color: colors.darkGreen,
+  },
+
+  buttonContainer: {
+    position: "absolute",
+    width: "100%",
+    bottom: perfectSize(48),
+  },
+  underButtonText: {
+    color: colors.blackColor,
+    fontSize: perfectSize(14),
+    marginTop: "5%",
+    fontWeight: "400",
+    lineHeight: perfectSize(21),
+    fontFamily: "PoppinsRegular",
+    alignSelf:'center'
+  },
+  registerText: {
+    color: colors.darkGreen,
+    fontSize: perfectSize(14),
+    marginBottom: "5%",
+    fontWeight: "600",
+    lineHeight: perfectSize(21),
+    fontFamily: "PoppinsRegular",
+    alignSelf:'center'
+  }
 });

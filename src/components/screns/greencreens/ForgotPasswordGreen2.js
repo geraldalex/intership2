@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import FormButtonGreen from "../myComponents/FormButtonGreen";
+import LogoIcon from "../myComponents/LogoIcon";
 
-
-const ForgotPasswordGreen2 = () => {
+const ForgotPasswordGreen1 = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
@@ -17,111 +17,34 @@ const ForgotPasswordGreen2 = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar translucent barStyle="light-content" />
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginTop: "16%",
-            fontSize: perfectSize(18),
-            fontWeight: "600",
-            marginBottom: "7%",
-            lineHeight: perfectSize(27),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Your Logo
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginBottom: "2%",
-            fontWeight: "600",
-            lineHeight: perfectSize(39),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Forgot password
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            fontWeight: "500",
-            fontSize: perfectSize(21),
-            lineHeight: perfectSize(31),
-            marginBottom: "8%",
-            fontFamily: "PoppinsMedium",
-          },
-        ]}
-      >
-        Lorem Ipsum is simply{" "}
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            fontWeight: "400",
-            fontSize: perfectSize(14),
-            lineHeight: perfectSize(21),
-            fontFamily: "PoppinsRegular",
-          },
-        ]}
-      >
-        You may not have an account yet
-      </Text>
-      <View style={{ flexDirection: "row" }}>
-        <Text
-          style={[
-            styles.headersTitle,
-            {
-              fontWeight: "400",
-              fontSize: perfectSize(14),
-              lineHeight: perfectSize(21),
-              fontFamily: "PoppinsRegular",
-            },
-          ]}
-        >
-          Make it
-        </Text>
-        <Text
-          style={[
-            styles.headersTitle,
-            {
-              fontWeight: "400",
-              fontSize: perfectSize(14),
-              lineHeight: perfectSize(21),
-              marginLeft: "2%",
-              color: colors.darkGreen,
-              fontFamily: "PoppinsRegular",
-            },
-          ]}
-        >
-          Register here !
-        </Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.logoContainer}>
+        <LogoIcon />
       </View>
-      <View style={[styles.inputContainer, { marginTop: "10%" }]}>
+      <Text style={styles.headersTitle}>Password Recovery</Text>
+
+      <Text style={styles.underHeaderText}>Don’t have an account?!</Text>
+
+      <Text style={styles.registerText}>Register Here</Text>
+
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
-          placeholder="Enter email"
+          placeholder="Email or Phone Number"
           placeholderTextColor={colors.blackColor}
           keyboardType="email-address"
         />
       </View>
 
       
-<View style={{ position: "absolute", width: "100%", bottom: perfectSize(48) }}>
-      <FormButtonGreen   buttonTitle="SEND" />
+      <View style={styles.buttonContainer}>
+        <FormButtonGreen buttonTitle="SEND" />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
-export default ForgotPasswordGreen2;
+export default ForgotPasswordGreen1;
 
 const styles = StyleSheet.create({
   container: {
@@ -129,10 +52,36 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     backgroundColor: colors.whiteBackImage,
   },
+  logoContainer: {
+    marginLeft: "8%",
+    marginTop: "10%",
+    marginBottom: "5%",
+  },
   headersTitle: {
     color: colors.blackColor,
     fontSize: perfectSize(26),
     marginLeft: "8%",
+    marginBottom: "8%",
+    fontWeight: "600",
+    lineHeight: perfectSize(39),
+    fontFamily: "PoppinsSemiBold",
+  },
+  underHeaderText: {
+    color: colors.blackColor,
+    marginLeft: "8%",
+    fontWeight: "400",
+    fontSize: perfectSize(14),
+    lineHeight: perfectSize(21),
+    fontFamily: "PoppinsRegular",
+  },
+  registerText: {
+    color: colors.blackColor,
+    marginLeft: "8%",
+    fontWeight: "600",
+    fontSize: perfectSize(14),
+    lineHeight: perfectSize(21),
+    color: colors.darkGreen,
+    fontFamily: "PoppinsRegular",
   },
 
   inputContainer: {
@@ -143,13 +92,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderColor: colors.darkGreen,
     borderBottomWidth: perfectSize(2),
+    marginTop: "15%",
   },
   textInput: {
-    paddingLeft: perfectSize(20),
+    paddingLeft: perfectSize(10),
     color: colors.blackColor,
     fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
-    width:'80%'
+    width: "80%",
+  },
+ 
+  buttonContainer: {
+    position: "absolute",
+    width: "100%",
+    bottom: perfectSize(48),
   },
 });
+

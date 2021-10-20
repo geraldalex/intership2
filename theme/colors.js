@@ -8,12 +8,14 @@ export default colors = {
     whiteBackImage: '#FFFFFF',
     blueColor: '#3B5998',
     pureColor: '#FAE7E7',
-    pureBorderColor: '#FF6C6C',
+    pureBorderColor: '#FF4B4B',
     blackColor: '#000000',
     lightBlueColor:'#F0EFFF',
     darkGreen: '#035A31',
     grayColor: '#D0D2CF',
    grayLineColor: '#1F3330',
-   darkRedColor: '#C70909'
+   darkRedColor: '#C70909',
+   lightPureColor: '#FF6C6C'
+
     
 }
