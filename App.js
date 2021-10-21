@@ -21,6 +21,7 @@ import {
   SignInUpStepGreen3,
   SignInToStepGreen2,
   SignInToStepGreen1,
+  ConfirmationCode
 } from "./src/components/screns/greencreens";
 
 import {
@@ -33,6 +34,8 @@ import {
   SettingsPaymnets,
   SettingsPeyment2,
 } from "./src/components/screns/settings";
+
+
 
 export default function App() {
   const Drawer = createDrawerNavigator();
@@ -76,6 +79,10 @@ export default function App() {
         <Drawer.Screen
           name="SignInToStepGreen1"
           component={SignInToStepGreen1}
+        />
+         <Drawer.Screen
+          name="ConfirmationCode"
+          component={ConfirmationCode}
         />
         <Drawer.Screen name="Settings" component={Settings} />
         <Drawer.Screen name="Settings2" component={Settings2} />

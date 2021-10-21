@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import FormButtonGreen from "../myComponents/FormButtonGreen";
-import LogoIcon from "../myComponents/LogoIcon";
+import Logo from "../../../../assets/svg/Logo.svg"
 
 const ForgotPasswordGreen1 = () => {
   const [loaded] = useFonts({
@@ -19,7 +19,7 @@ const ForgotPasswordGreen1 = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
-        <LogoIcon />
+        <Logo />
       </View>
       <Text style={styles.headersTitle}>Password Recovery</Text>
 

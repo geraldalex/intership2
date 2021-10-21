@@ -3,8 +3,9 @@ import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import FormButtonGreen from "../myComponents/FormButtonGreen";
-import LogoIcon from "../myComponents/LogoIcon";
-import EyeIcon from "../myComponents/EyeIcon";
+import Logo from "../../../../assets/svg/Logo.svg"
+import Invisible from "../../../../assets/svg/invisible1.svg"
+
 
 const SignInToGreen = () => {
   const [loaded] = useFonts({
@@ -20,7 +21,7 @@ const SignInToGreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
-        <LogoIcon />
+        <Logo />
       </View>
       <Text style={styles.headersTitle}>Sign In</Text>
 
@@ -42,7 +43,7 @@ const SignInToGreen = () => {
           placeholderTextColor={colors.blackColor}
           secureTextEntry={true}
         />
-        <EyeIcon />
+        <Invisible />
       </View>
       <Text
         style={styles.forgotPaswordText}
@@ -51,7 +52,7 @@ const SignInToGreen = () => {
       </Text>
 
       <View style={styles.buttonContainer}>
-        <FormButtonGreen buttonTitle="SEND" />
+        <FormButtonGreen buttonTitle="Login" />
         <Text style={styles.underButtonText}>Don’t have an account?!</Text>
         <Text style={styles.registerText}>Register Here</Text>
       </View>

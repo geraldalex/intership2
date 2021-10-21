@@ -4,6 +4,8 @@ import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import TabBar from "../myComponents/TabBar";
 import LogoIcon from "../myComponents/LogoIcon";
+import Logo from "../../../../assets/svg/Logo.svg";
+import Card from "../../../../assets/svg/Logo.svg";
 import { ScrollView } from "react-native-gesture-handler";
 
 const SettingsPaymnets = () => {

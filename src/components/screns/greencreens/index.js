@@ -4,6 +4,7 @@ import SignInToGreen from './SignInToGreen'
 import SignInToStepGreen1 from './SignInToStepGreen1'
 import SignInToStepGreen2 from './SignInToStepGreen2'
 import SignInUpStepGreen3 from './SignInUpStepGreen3'
+import ConfirmationCode from './ConfirmationCode'
 
 
 export {
@@ -12,5 +13,6 @@ export {
     SignInToGreen,
     SignInToStepGreen1,
     SignInToStepGreen2,
-    SignInUpStepGreen3
+    SignInUpStepGreen3,
+    ConfirmationCode
 }

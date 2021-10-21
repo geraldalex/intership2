@@ -11,6 +11,7 @@ import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import LogoIcon from "../myComponents/LogoIcon";
 import FormButtonRed from "../myComponents/FormButtonRed";
 
+
 const Settings = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),

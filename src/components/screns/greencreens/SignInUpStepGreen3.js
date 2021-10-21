@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, SafeAreaView } from "react-native";
 import { colors, perfectSize } from "../../../../theme";
 import { useFonts } from "expo-font";
 import FormButtonGreen from "../myComponents/FormButtonGreen";
+import Logo from "../../../../assets/svg/Logo.svg"
+import { ScrollView } from "react-native-gesture-handler";
 
-
-const SignInUpStepGreen3 = () => {
+const ForgotPasswordGreen1 = () => {
   const [loaded] = useFonts({
     PoppinsMedium: require("../../../../assets/fonts/Poppins-Medium.ttf"),
     PoppinsRegular: require("../../../../assets/fonts/Poppins-Medium.ttf"),
@@ -17,165 +18,65 @@ const SignInUpStepGreen3 = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar translucent barStyle="light-content" />
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginTop: "16%",
-            fontSize: perfectSize(18),
-            fontWeight: "600",
-            marginBottom: "7%",
-            lineHeight: perfectSize(27),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Your Logo
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            marginBottom: "2%",
-            fontWeight: "600",
-            lineHeight: perfectSize(39),
-            fontFamily: "PoppinsSemiBold",
-          },
-        ]}
-      >
-        Sign in up - Step 3
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            fontWeight: "500",
-            fontSize: perfectSize(21),
-            lineHeight: perfectSize(31),
-            marginBottom: "8%",
-            fontFamily: "PoppinsMedium",
-          },
-        ]}
-      >
-        Lorem Ipsum is simply{" "}
-      </Text>
-      <Text
-        style={[
-          styles.headersTitle,
-          {
-            fontWeight: "400",
-            fontSize: perfectSize(14),
-            lineHeight: perfectSize(21),
-            fontFamily: "PoppinsRegular",
-          },
-        ]}
-      >
-        If you don’t have an account register
-      </Text>
-      <View style={{ flexDirection: "row" }}>
-        <Text
-          style={[
-            styles.headersTitle,
-            {
-              fontWeight: "400",
-              fontSize: perfectSize(14),
-              lineHeight: perfectSize(21),
-              fontFamily: "PoppinsRegular",
-            },
-          ]}
-        >
-          You can
-        </Text>
-        <Text
-          style={[
-            styles.headersTitle,
-            {
-              fontWeight: "400",
-              fontSize: perfectSize(14),
-              lineHeight: perfectSize(21),
-              marginLeft: "2%",
-              color: colors.darkGreen,
-              fontFamily: "PoppinsSemiBold",
-            },
-          ]}
-        >
-          Login here !
-        </Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.logoContainer}>
+        <Logo />
       </View>
-      <View
-        style={[styles.inputContainer, { marginTop: "5%", marginBottom: "5%" }]}
-      >
+      <Text style={styles.headersTitle}>Sign in up - Step 3</Text>
+
+      <Text style={styles.underHeaderText}>If you already have an account register</Text>
+<View style={styles.rowText}>
+      <Text style={styles.underHeaderText}>You can</Text>
+      <Text style={styles.registerText}>Login Here!</Text>
+      </View>
+<ScrollView style={styles.scrollStyle}>
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Email or Phone Number"
+          placeholderTextColor={colors.blackColor}
+          keyboardType="email-address"
+        />
+      </View>
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
           placeholder="Choose your category: "
           placeholderTextColor={colors.blackColor}
+          keyboardType="email-address"
         />
       </View>
-
-      <View style={[styles.inputContainer, { marginBottom: "5%" }]}>
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
           placeholder="You offer:"
           placeholderTextColor={colors.blackColor}
+          keyboardType="email-address"
         />
       </View>
-      <View style={[styles.inputContainer, { marginBottom: "5%" }]}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Are you registered bussines?"
-          placeholderTextColor={colors.blackColor}
-        />
-      </View>
-
-      <View
-        style={[
-          styles.inputContainer,
-          { marginBottom: "5%", height: perfectSize(90) },
-        ]}
-      >
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
           placeholder="Do you pay tax?"
           placeholderTextColor={colors.blackColor}
+          keyboardType="email-address"
         />
       </View>
-      <View style={{flexDirection:'row', alignSelf:'center', position: "absolute", bottom:115}}>
-      <Text
-        style={{
-          marginRight: "1%",
-          
-          fontSize: perfectSize(12),
-          fontWeight: "400",
-          fontFamily: "PoppinsRegular",
-          color: colors.blackColor,
-        }}
-      >
-        By clicking ”Register” you agree to the 
-      </Text>
-      <Text
-        style={{
-        
-          
-          fontSize: perfectSize(12),
-          fontWeight: "400",
-          fontFamily: "PoppinsRegular",
-          color: colors.darkGreen,
-        }}
-      >
-        terms of use
-      </Text>
-      </View>
+      </ScrollView>
 
-      <View style={{ position: "absolute", width: "100%", bottom: perfectSize(48) }}>
-      <FormButtonGreen   buttonTitle="Register" />
+      
+      <View style={styles.buttonContainer}>
+        <View style={styles.underTextContainer}>
+          <Text style={styles.underButtonText}>By clicking ”Register” you agree to the terms of use</Text>
+          <Text style={styles.underButtonTextGren}> terms of use</Text>
+        </View>
+        <FormButtonGreen buttonTitle="Register" />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
-export default SignInUpStepGreen3;
+export default ForgotPasswordGreen1;
 
 const styles = StyleSheet.create({
   container: {
@@ -183,10 +84,36 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     backgroundColor: colors.whiteBackImage,
   },
+  logoContainer: {
+    marginLeft: "8%",
+    marginTop: "10%",
+    marginBottom: "5%",
+  },
   headersTitle: {
     color: colors.blackColor,
     fontSize: perfectSize(26),
     marginLeft: "8%",
+    marginBottom: "8%",
+    fontWeight: "600",
+    lineHeight: perfectSize(39),
+    fontFamily: "PoppinsSemiBold",
+  },
+  underHeaderText: {
+    color: colors.blackColor,
+    marginLeft: "8%",
+    fontWeight: "400",
+    fontSize: perfectSize(14),
+    lineHeight: perfectSize(21),
+    fontFamily: "PoppinsRegular",
+  },
+  registerText: {
+    color: colors.blackColor,
+    marginLeft: "3%",
+    fontWeight: "600",
+    fontSize: perfectSize(14),
+    lineHeight: perfectSize(21),
+    color: colors.darkGreen,
+    fontFamily: "PoppinsRegular",
   },
 
   inputContainer: {
@@ -195,15 +122,49 @@ const styles = StyleSheet.create({
     backgroundColor: colors.whiteBackImage,
     alignSelf: "center",
     justifyContent: "center",
+    borderColor: colors.darkGreen,
     borderBottomWidth: perfectSize(2),
-    borderColor: colors.darkGreen
+    marginTop: "3%",
   },
   textInput: {
-    paddingLeft: perfectSize(20),
+    paddingLeft: perfectSize(10),
     color: colors.blackColor,
     fontSize: perfectSize(15),
     fontFamily: "PoppinsRegular",
     fontWeight: "400",
-    width:'80%'
+    width: "80%",
+  },
+  rowText: {
+    flexDirection: 'row'
+  },
+  scrollStyle: {
+    marginTop:'10%'
+  },
+  underTextContainer: {
+    flexDirection:'row', alignSelf:'center', bottom:'2%'
+  },
+  underButtonText: {
+    color: colors.blackColor,
+    
+    fontWeight: "400",
+    fontSize: perfectSize(12),
+    lineHeight: perfectSize(18),
+    fontFamily: "PoppinsRegular",
+  },
+  underButtonTextGren: {
+    color: colors.darkGreen,
+    
+    fontWeight: "400",
+    fontSize: perfectSize(12),
+    lineHeight: perfectSize(18),
+    fontFamily: "PoppinsRegular",
+  },
+ 
+  buttonContainer: {
+    position: "absolute",
+    width: "100%",
+    bottom: perfectSize(48),
+    
   },
 });
+
